@@ -1,13 +1,12 @@
+﻿import {autoinject} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
-import {autoinject} from 'aurelia-framework';
 
 @autoinject
-export class App {
-    header = 'Droids!';
+export class Droids {
+    heading = 'Droids';
     droids = [];
 
     constructor(private http: HttpClient) {
-        console.log("Init App.ts");
         http.configure(config => {
             config
                 .useStandardConfiguration()
@@ -16,8 +15,7 @@ export class App {
     }
 
     activate() {
-        console.log("Fetching droids");
-        return this.http.fetch("")
+        return this.http.fetch('users')
             .then(response => response.json())
             .then(droids => this.droids = droids);
     }

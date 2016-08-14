@@ -250,3 +250,7 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+DroidWorx/DroidWorx.WebApp/wwwroot/scripts/app-bundle.js
+DroidWorx/DroidWorx.WebApp/wwwroot/scripts/app-bundle.js.map
+DroidWorx/DroidWorx.WebApp/wwwroot/scripts/vendor-bundle.js

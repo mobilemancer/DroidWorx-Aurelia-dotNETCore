@@ -7,7 +7,6 @@ export class App {
     droids = [];
 
     constructor(private http: HttpClient) {
-        console.log("Init App.ts");
         http.configure(config => {
             config
                 .useStandardConfiguration()
@@ -16,7 +15,6 @@ export class App {
     }
 
     activate() {
-        console.log("Fetching droids");
         return this.http.fetch("")
             .then(response => response.json())
             .then(droids => this.droids = droids);

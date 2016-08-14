@@ -1,7 +1,9 @@
 <template>
+    <require from="./resources/elements/droid-spec"></require>
+
     <h1>${header}</h1>
 
     <div repeat.for="droid of droids">
-        <div>${droid.name}</div>
+        <droid-spec droid.bind="droid"></droid-spec>
     </div>
 </template>

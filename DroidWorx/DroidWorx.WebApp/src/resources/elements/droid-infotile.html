@@ -1,6 +1,8 @@
 <template>
-    <div>
-        <h1>${droid.name}</h1>
+    <require from="./droid-infotile.css"></require>
+
+    <div class="card">
+        <div class="header-small">${droid.name}</div>
         <div><div class="label">Product Series:</div> <div class="value">${droid.productSeries}</div></div>
         <div><div class="label">Imperial Contract Id:</div> <div class="value">${droid.imperialContractId}</div></div>
         <div><div class="label">Credit Balance:</div> <div class="value">${droid.creditBalance}&#162;</div></div>

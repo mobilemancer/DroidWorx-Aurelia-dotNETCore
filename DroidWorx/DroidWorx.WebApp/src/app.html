@@ -1,9 +1,4 @@
 <template>
-    <require from="./resources/elements/droid-spec"></require>
-
-    <h1>${header}</h1>
-
-    <div repeat.for="droid of droids">
-        <droid-spec droid.bind="droid"></droid-spec>
-    </div>
+    <require from="./main.css"></require>
+    <router-view></router-view>
 </template>

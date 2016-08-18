@@ -1,22 +1,16 @@
-import {HttpClient} from 'aurelia-fetch-client';
-import {autoinject} from 'aurelia-framework';
+import {autoinject} from "aurelia-framework";
+import {RouterConfiguration, Router} from "aurelia-router";
 
 @autoinject
 export class App {
-    header = 'Droids!';
-    droids = [];
+    private router: Router;
 
-    constructor(private http: HttpClient) {
-        http.configure(config => {
-            config
-                .useStandardConfiguration()
-                .withBaseUrl('http://localhost:5005/api/droids');
-        });
-    }
-
-    activate() {
-        return this.http.fetch("")
-            .then(response => response.json())
-            .then(droids => this.droids = droids);
+    configureRouter(config: RouterConfiguration, router: Router): void {
+        this.router = router;
+        config.title = "Droid Worx";
+        config.map([
+            { route: ["", "home", "index"], name: "home",   moduleId: "views/home/index",   title: "Home" },
+            { route: "droids",              name: "home",   moduleId: "views/droids/droids",       title: "Droids",    nav: true}
+        ]);
     }
 }

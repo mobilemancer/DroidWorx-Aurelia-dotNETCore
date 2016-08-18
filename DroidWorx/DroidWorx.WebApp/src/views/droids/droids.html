@@ -1,0 +1,9 @@
+﻿<template>
+    <require from="../../resources/elements/droid-infotile"></require>
+
+    <div class="header-big">${header}</div>
+
+    <div repeat.for="droid of droids">
+        <droid-infotile droid.bind="droid"></droid-infotile>
+    </div>
+</template>

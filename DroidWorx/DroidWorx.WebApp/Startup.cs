@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using DroidRepository;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -11,6 +12,10 @@ namespace DroidWorx.WebApp
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            // Add framework services.
+            services.AddMvc();
+            //DI
+            services.AddSingleton<IDroidRepository, DroidRepository.DroidRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -25,6 +30,9 @@ namespace DroidWorx.WebApp
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
+
+            app.UseMvc();
+
         }
     }
 }

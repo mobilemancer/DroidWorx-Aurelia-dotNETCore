@@ -1,10 +1,11 @@
 <template>
     <require from="./droid-infotile.css"></require>
+    <require from="../value-converters/contract-format"></require>
 
     <div class="card">
         <div class="header-small">${droid.name}</div>
         <div><div class="label">Product Series:</div> <div class="value">${droid.productSeries}</div></div>
-        <div><div class="label">Imperial Contract Id:</div> <div class="value">${droid.imperialContractId}</div></div>
+        <div><div class="label">Imperial Contract:</div> <div class="value">${droid.imperialContractId | contractFormat}</div></div>
         <div><div class="label">Credit Balance:</div> <div class="value">${droid.creditBalance}&#162;</div></div>
         <div><div class="label">Height:</div> <div class="value">${droid.height}<i>m</i></div></div>
     </div>

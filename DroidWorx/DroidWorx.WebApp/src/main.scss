@@ -1,4 +1,9 @@
-﻿.header-big {
+﻿body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f6f5f5;
+}
+
+.header-big {
     font-family: 'Bungee', cursive;
     font-size: 30px;
 }
@@ -7,22 +12,6 @@
     font-family: 'Bungee', cursive;
     font-size: 18px;
     line-height: 36px;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f6f5f5;
-}
-
-.label {
-    font-weight: bold;
-    width: 200px;
-    display: inline-block;
-}
-
-.value {
-    font-style: italic;
-    display: inline-block;
 }
 
 .card {
